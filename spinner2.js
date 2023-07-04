@@ -1,5 +1,5 @@
 const spin = (spinTime) => {
-  const SYMBOLS = ['\r|   ', '\r/   ', '\r-   ', '\r\\   '];
+  const SYMBOLS = ['|   ', '/   ', '-   ', '\\   '];
 
   const getSymbol = (index) => {
     return SYMBOLS[(index + 1 + 4) % 4];
@@ -16,7 +16,7 @@ const spin = (spinTime) => {
     })();
 
     setTimeout(() => {
-      process.stdout.write(symbol);
+      process.stdout.write('\r' + symbol);
       if (isFinalLoop) console.log("\n");
     }, delay);
 
